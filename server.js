@@ -1,4 +1,5 @@
 /**Import requirements */
+require('dotenv/config')
 const express = require('express')
 const app = express()
 const http = require('http')
@@ -18,13 +19,21 @@ io.on("connection", (socket)=>{
     console.log("a user has connected")
 
     /**Handle Users that join chat */
-    
+    socket.on('join',(userName)=>{
+        users.add(userName)
+
+        /**Broadcast to all clients that user has joined */
+        io.emit('userJoined', userName)
+
+        /**Send updated User list to all clients */
+        io.emit('userList',Array.from(users))
+    })
     /**Handle incoming chat messages */
 
     /**Handle user disconnection */
 })
 
 /**Connect and listen on server */
-app.listen(PORT,()=>{
-    console.log(`Server running on: http://localhost/${PORT}`)
+server.listen(PORT,()=>{
+    console.log(`Server running on: http://localhost:${PORT}`)
 })
