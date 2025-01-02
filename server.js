@@ -18,7 +18,7 @@ const users = new Set()
 io.on("connection", (socket)=>{
     console.log("a user has connected")
 
-    /**Handle Users that join chat */
+    /**Listen and Handle User join event */
     socket.on('join',(userName)=>{
         users.add(userName)
 
@@ -28,9 +28,23 @@ io.on("connection", (socket)=>{
         /**Send updated User list to all clients */
         io.emit('userList',Array.from(users))
     })
+    
     /**Handle incoming chat messages */
-
+    socket.on('chatMessage',(message)=>{
+        io.emit('chatMessage', message)
+    })
     /**Handle user disconnection */
+    // socket.on('disconnect',()=>{
+    //     console.log('User is DC\'d')
+    //     users.forEach(user=>{
+    //         if (user===socket.userName) {
+    //             users.delete(user)
+    //             io.emit('userLeft', user)
+
+    //             io.emit('userList', Array.from(users))
+    //         }
+    //     })
+    // })
 })
 
 /**Connect and listen on server */
