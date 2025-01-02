@@ -52,6 +52,6 @@ function addMessage(input) {
  })
 
  /**Listen for userLeft emit */
-//  socket.on('userLeft',(user)=>{
-//     addMessage(`${user} has left the chat`)
-//  })
+ socket.on('userLeft',(user)=>{
+    addMessage(`${user} has left the chat`)
+ })

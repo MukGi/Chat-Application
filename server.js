@@ -21,6 +21,8 @@ io.on("connection", (socket)=>{
     /**Listen and Handle User join event */
     socket.on('join',(userName)=>{
         users.add(userName)
+        socket.userName = userName
+
 
         /**Broadcast to all clients that user has joined */
         io.emit('userJoined', userName)
@@ -34,17 +36,17 @@ io.on("connection", (socket)=>{
         io.emit('chatMessage', message)
     })
     /**Handle user disconnection */
-    // socket.on('disconnect',()=>{
-    //     console.log('User is DC\'d')
-    //     users.forEach(user=>{
-    //         if (user===socket.userName) {
-    //             users.delete(user)
-    //             io.emit('userLeft', user)
+    socket.on('disconnect',()=>{
+        console.log(`${socket.userName} has disconnected`)
+        users.forEach(user=>{
+            if (user===socket.userName) {
+                users.delete(user)
+                io.emit('userLeft', user)
 
-    //             io.emit('userList', Array.from(users))
-    //         }
-    //     })
-    // })
+                io.emit('userList', Array.from(users))
+            }
+        })
+    })
 })
 
 /**Connect and listen on server */
