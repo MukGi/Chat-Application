@@ -10,6 +10,8 @@
 
 <h3>Tech Stack:</h3>
 <ul>
+  <li>HTML</li>
+  <li>CSS</li>
   <li>NodeJS</li>
   <li>ExpressJS</li>
   <li>Socket.IO</li>
