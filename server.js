@@ -5,6 +5,17 @@ const app = express()
 const http = require('http')
 const socketIo = require('socket.io')
 const PORT = process.env.PORT_NUM
+const fs = require('fs');
+
+const path = require('path')
+
+// Create uploads directory
+const uploadsDir = path.join(__dirname, 'uploads')
+if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir)
+}
+
+app.use('/uploads', express.static('uploads'))
 
 /**Create the server */
 const server = http.createServer(app)
@@ -20,8 +31,9 @@ io.on("connection", (socket)=>{
 
     /**Listen and Handle User join event */
     socket.on('join',(userName)=>{
-        users.add(userName)
         socket.userName = userName
+        users.add(userName)
+        
 
 
         /**Broadcast to all clients that user has joined */
@@ -34,6 +46,15 @@ io.on("connection", (socket)=>{
     /**Handle incoming chat messages */
     socket.on('chatMessage',(message)=>{
         io.emit('chatMessage', message)
+    })
+
+    /**Handle image upload signals */
+      socket.on("upload", (data)=>{
+        io.emit('imageMessage', {
+            userName: data.userName,
+            image: data.image,
+            fileType: data.fileType
+        })
     })
     /**Handle user disconnection */
     socket.on('disconnect',()=>{

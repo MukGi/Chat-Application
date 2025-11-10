@@ -183,3 +183,20 @@ button:hover {
 button:focus {
     outline: none;
 }
+
+.notification{
+    text-align: center;
+    text-decoration: underline;
+}
+
+#image-input{
+    display: none;
+}
+label[for="image-input"] {
+    cursor: pointer;
+    padding: 8px 12px;
+    background: #007bff;
+    color: white;
+    border-radius: 4px;
+    margin-left: 8px;
+}
