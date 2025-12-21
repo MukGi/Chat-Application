@@ -28,15 +28,13 @@ const users = new Set()
 
 io.on("connection", (socket)=>{
     console.log("a user has connected")
-
     /**Listen and Handle User join event */
     socket.on('join',(userName)=>{
         socket.userName = userName
-        users.add(userName)
-        
+        /**update members list */
+        users.add(userName) 
 
-
-        /**Broadcast to all clients that user has joined */
+        /**Broadcast to all clients that a user has joined */
         io.emit('userJoined', userName)
 
         /**Send updated User list to all clients */
