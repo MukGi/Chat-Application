@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const http = require('http')
 const socketIo = require('socket.io')
-const PORT = process.env.PORT_NUM
+const PORT = process.env.PORT || process.env.PORT_NUM || 3000
 const fs = require('fs');
 
 const path = require('path')
@@ -21,7 +21,12 @@ app.use('/uploads', express.static('uploads'))
 const server = http.createServer(app)
 
 /**initialize socketIo and attach it to the server */
-const io = socketIo(server)
+const io = socketIo(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+})
 app.use(express.static('public'))
 
 const users = new Set()
