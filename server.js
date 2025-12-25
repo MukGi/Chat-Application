@@ -21,12 +21,7 @@ app.use('/uploads', express.static('uploads'))
 const server = http.createServer(app)
 
 /**initialize socketIo and attach it to the server */
-const io = socketIo(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"]
-  }
-})
+const io = socketIo(server)
 app.use(express.static('public'))
 
 const users = new Set()
