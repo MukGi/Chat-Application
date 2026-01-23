@@ -1,6 +1,6 @@
-if (profanityCheck(message)){
-//     console.log("can't say that")
-//  }
-//  else{
-//     console.log(message)
-//  }
+// if (profanityCheck(message)){
+// //     console.log("can't say that")
+// //  }
+// //  else{
+// //     console.log(message)
+// //  }
