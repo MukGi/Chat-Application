@@ -15,6 +15,7 @@
 <li>Image Sharing</li>
 <li>Group Chat</li>
 <li>Members Join/Leave notifications</li>
+
 <h3>Tech Stack:</h3>
 <ul>
   <li>HTML</li>
