@@ -12,6 +12,7 @@
 <ul>
   <li>HTML</li>
   <li>CSS</li>
+  <li>Javascript</li>
   <li>NodeJS</li>
   <li>ExpressJS</li>
   <li>Socket.IO</li>
