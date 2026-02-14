@@ -6,10 +6,15 @@
   <li>Fill in your real values</li>
   <li>Run npm install</li>
   <li>Run "npm start" in terminal</li>
-  <li>paste the link in two tabs in your browser</li>
+  <li>paste the link in two different tabs in your browser</li>
   <li>Finally, just chat away</li>
 </ol>
 
+<h3>App Features:</h3>
+<li>Profanity Filter</li>
+<li>Image Sharing</li>
+<li>Group Chat</li>
+<li>Members Join/Leave notifications</li>
 <h3>Tech Stack:</h3>
 <ul>
   <li>HTML</li>
