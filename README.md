@@ -2,8 +2,10 @@
 <h3>How to use:</h3>
 <ol>
   <li>Download and Unzip file</li>
-  <li>Type "npm start" in terminal</li>
-  <li>Follow the link(it should be http://localhost:3000)</li>
+  <li>Copy .env.example and rename to .env</li>
+  <li>Fill in your real values</li>
+  <li>Run npm install</li>
+  <li>Run "npm start" in terminal</li>
   <li>paste the link in two tabs in your browser</li>
   <li>Finally, just chat away</li>
 </ol>
