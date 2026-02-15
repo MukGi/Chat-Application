@@ -4,7 +4,7 @@
   <li>Download and Unzip file</li>
   <li>Copy .env.example and rename to .env</li>
   <li>Fill in your real values</li>
-  <li>Run npm install</li>
+  <li>Run npm install dotenv</li>
   <li>Run "npm start" in terminal</li>
   <li>paste the link in two different tabs in your browser</li>
   <li>Finally, just chat away</li>
