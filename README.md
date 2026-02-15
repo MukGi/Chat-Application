@@ -25,3 +25,8 @@
   <li>ExpressJS</li>
   <li>Socket.IO</li>
 </ul>
+
+<h3>Demo</h3>
+<img src='images\full_chat.png'>
+<img src='images\notis.png'>
+<img src='images\notis.png'>
