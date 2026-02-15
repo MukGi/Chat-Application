@@ -6,6 +6,7 @@
   <li>Fill in your real values</li>
   <li>Run npm install dotenv</li>
   <li>Run "npm start" in terminal</li>
+  <li>A link http://localhost:Your_PORT_NUM will appear in terminal</li>
   <li>paste the link in two different tabs in your browser</li>
   <li>Finally, just chat away</li>
 </ol>
