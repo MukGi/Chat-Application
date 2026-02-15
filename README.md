@@ -11,10 +11,13 @@
 </ol>
 
 <h3>App Features:</h3>
+<ol>
 <li>Profanity Filter</li>
 <li>Image Sharing</li>
 <li>Group Chat</li>
 <li>Members Join/Leave notifications</li>
+</ol>
+
 
 <h3>Tech Stack:</h3>
 <ul>
