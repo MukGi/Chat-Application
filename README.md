@@ -30,6 +30,6 @@
 </ul>
 
 <h3>Demo</h3>
+<img src='images\members_list.png'>
+<img src='images\notis.png'>
 <img src='images\full_chat.png'>
-<img src='images\notis.png'>
-<img src='images\notis.png'>
